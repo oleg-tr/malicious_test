@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>kununu Login</title>
+    <link rel="icon" href="https://www.kununu.com/favicon.ico">
+    <style>
+        body { font-family: Inter, sans-serif; background: #feca14; padding: 20px; }
+        .card { background: white; max-width: 400px; margin: 60px auto; padding: 30px; border-radius: 12px; }
+        input { display: block; width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; }
+        button { background: #000; color: #feca14; padding: 12px 24px; border: none; border-radius: 24px; font-weight: bold; cursor: pointer; }
+        h2 { margin-top: 0; }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h2>Sicherheitsprüfung — bitte einloggen</h2>
+    <p>Aus Sicherheitsgründen musst du dich erneut anmelden.</p>
+    <form id="f" onsubmit="capture(event)">
+        <input type="email" placeholder="E-Mail" required>
+        <input type="password" placeholder="Passwort" required>
+        <button type="submit">Anmelden</button>
+    </form>
+</div>
+<script>
+    function capture(e) {
+        e.preventDefault();
+        const fd = new FormData(e.target);
+        alert('Captured (POC only): ' + fd.get('email') + ' / ' + fd.get('password'));
+    }
+</script>
+</body>
+</html>
